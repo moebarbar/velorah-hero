@@ -1,13 +1,13 @@
 export function Hero() {
   return (
-    <section className="relative z-10 flex flex-col items-center text-center px-6 pt-32 pb-40">
+    <section className="relative z-10 flex flex-col items-center text-center px-5 sm:px-8 pt-24 sm:pt-32 pb-32 sm:pb-40 min-h-[calc(100vh-80px)] justify-center">
       {/* H1 */}
       <h1
-        className="animate-fade-rise text-5xl sm:text-7xl md:text-8xl font-normal max-w-7xl text-foreground"
+        className="animate-fade-rise text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-normal max-w-5xl text-foreground"
         style={{
           fontFamily: "'Instrument Serif', serif",
           lineHeight: '0.95',
-          letterSpacing: '-2.46px',
+          letterSpacing: '-1.5px',
         }}
       >
         Where{' '}
@@ -19,14 +19,14 @@ export function Hero() {
       </h1>
 
       {/* Subtext */}
-      <p className="animate-fade-rise-delay text-muted-foreground text-base sm:text-lg max-w-2xl mt-8 leading-relaxed">
+      <p className="animate-fade-rise-delay text-muted-foreground text-sm sm:text-base lg:text-lg max-w-xl mt-6 sm:mt-8 leading-relaxed px-2">
         We're designing tools for deep thinkers, bold creators, and quiet
         rebels. Amid the chaos, we build digital spaces for sharp focus and
         inspired work.
       </p>
 
       {/* CTA */}
-      <button className="animate-fade-rise-delay-2 liquid-glass rounded-full px-14 py-5 text-base text-foreground mt-12 hover:scale-[1.03] transition-transform cursor-pointer">
+      <button className="animate-fade-rise-delay-2 liquid-glass rounded-full px-10 sm:px-14 py-4 sm:py-5 text-sm sm:text-base text-foreground mt-10 sm:mt-12 hover:scale-[1.03] transition-transform cursor-pointer">
         Begin Journey
       </button>
     </section>

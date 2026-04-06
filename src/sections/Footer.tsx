@@ -8,10 +8,10 @@ const NAV_LINKS = [
 
 export function Footer() {
   return (
-    <footer className="px-8 py-16 border-t border-white/5">
+    <footer className="px-5 sm:px-8 py-12 sm:py-16 border-t border-white/5">
       <div className="max-w-7xl mx-auto">
         {/* Top row */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 mb-12">
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-8 mb-10 sm:mb-12">
           <a
             href="#"
             className="text-2xl text-foreground no-underline"
@@ -20,7 +20,7 @@ export function Footer() {
             Velorah<sup className="text-xs">®</sup>
           </a>
 
-          <ul className="flex flex-wrap gap-8 list-none">
+          <ul className="flex flex-wrap gap-5 sm:gap-8 list-none">
             {NAV_LINKS.map(({ label, href }) => (
               <li key={label}>
                 <a
@@ -35,10 +35,10 @@ export function Footer() {
         </div>
 
         {/* Divider */}
-        <div className="border-t border-white/5 mb-8" />
+        <div className="border-t border-white/5 mb-6 sm:mb-8" />
 
         {/* Bottom row */}
-        <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3 sm:gap-4">
           <p className="text-xs text-muted-foreground/60">
             © {new Date().getFullYear()} Velorah. All rights reserved.
           </p>

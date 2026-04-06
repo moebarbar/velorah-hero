@@ -34,30 +34,30 @@ export function Journal() {
     <section
       id="journal"
       ref={ref as React.RefObject<HTMLElement>}
-      className="relative py-32 overflow-hidden"
+      className="relative py-20 sm:py-32 overflow-hidden"
     >
       {/* Orb */}
       <div
-        className="animate-orb pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[500px] rounded-full opacity-[0.04]"
+        className="animate-orb pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-[400px] sm:w-[500px] h-[400px] sm:h-[500px] rounded-full opacity-[0.04]"
         style={{
           background: 'radial-gradient(circle, hsl(201,100%,50%) 0%, transparent 70%)',
           filter: 'blur(70px)',
         }}
       />
 
-      <div className="relative max-w-7xl mx-auto px-8">
+      <div className="relative max-w-7xl mx-auto px-5 sm:px-8">
         {/* Header row */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-20">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12 sm:mb-20">
           <div>
             <p
-              className={`text-xs tracking-[0.2em] uppercase text-muted-foreground mb-6 transition-all duration-700 ${
+              className={`text-xs tracking-[0.2em] uppercase text-muted-foreground mb-4 sm:mb-6 transition-all duration-700 ${
                 inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
               }`}
             >
               Journal
             </p>
             <h2
-              className={`text-5xl sm:text-6xl text-foreground transition-all duration-700 delay-100 ${
+              className={`text-4xl sm:text-5xl lg:text-6xl text-foreground transition-all duration-700 delay-100 ${
                 inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
               }`}
               style={{
@@ -71,7 +71,7 @@ export function Journal() {
           </div>
           <a
             href="#"
-            className={`text-xs tracking-[0.2em] uppercase text-muted-foreground/50 hover:text-muted-foreground transition-all duration-700 delay-200 ${
+            className={`text-xs tracking-[0.2em] uppercase text-muted-foreground/50 hover:text-muted-foreground transition-all duration-700 delay-200 self-start sm:self-auto ${
               inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
             }`}
           >
@@ -80,7 +80,7 @@ export function Journal() {
         </div>
 
         {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {ARTICLES.map((article, i) => (
             <article
               key={article.title}
@@ -94,40 +94,38 @@ export function Journal() {
               {/* Top accent bar */}
               <div className="h-px w-0 group-hover:w-full bg-white/30 transition-all duration-700 absolute top-0 left-0" />
 
-              {/* Image placeholder — textured dark block */}
+              {/* Image placeholder */}
               <div
-                className="relative h-44 overflow-hidden border-b border-white/[0.06]"
+                className="relative h-36 sm:h-44 overflow-hidden border-b border-white/[0.06]"
                 style={{
                   background: `linear-gradient(135deg, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0.005) 100%)`,
                 }}
               >
-                {/* Category badge */}
                 <span className="absolute top-4 left-4 text-[9px] tracking-[0.25em] uppercase text-muted-foreground/60 border border-white/10 px-3 py-1">
                   {article.category}
                 </span>
-                {/* Decorative serif letter */}
                 <span
-                  className="absolute -bottom-4 -right-2 text-9xl text-white/[0.03] select-none pointer-events-none leading-none"
+                  className="absolute -bottom-4 -right-2 text-8xl sm:text-9xl text-white/[0.03] select-none pointer-events-none leading-none"
                   style={{ fontFamily: "'Instrument Serif', serif" }}
                 >
                   {article.title[0]}
                 </span>
               </div>
 
-              <div className="p-7 flex flex-col flex-1">
-                <div className="flex items-center justify-between mb-5">
+              <div className="p-5 sm:p-7 flex flex-col flex-1">
+                <div className="flex items-center justify-between mb-4 sm:mb-5">
                   <span className="text-[10px] text-muted-foreground/40">{article.date}</span>
                   <span className="text-[10px] text-muted-foreground/30">{article.readTime} read</span>
                 </div>
 
                 <h3
-                  className="text-xl text-foreground mb-4 leading-snug group-hover:text-white transition-colors flex-1"
+                  className="text-lg sm:text-xl text-foreground mb-3 sm:mb-4 leading-snug group-hover:text-white transition-colors flex-1"
                   style={{ fontFamily: "'Instrument Serif', serif" }}
                 >
                   {article.title}
                 </h3>
 
-                <p className="text-sm text-muted-foreground/70 leading-relaxed mb-7">
+                <p className="text-sm text-muted-foreground/70 leading-relaxed mb-6 sm:mb-7">
                   {article.excerpt}
                 </p>
 

@@ -14,11 +14,11 @@ export function Contact() {
     <section
       id="contact"
       ref={ref as React.RefObject<HTMLElement>}
-      className="relative py-32 overflow-hidden"
+      className="relative py-20 sm:py-32 overflow-hidden"
     >
       {/* Ambient orb */}
       <div
-        className="animate-orb-2 pointer-events-none absolute bottom-0 right-0 w-[600px] h-[600px] rounded-full opacity-[0.06]"
+        className="animate-orb-2 pointer-events-none absolute bottom-0 right-0 w-[400px] sm:w-[600px] h-[400px] sm:h-[600px] rounded-full opacity-[0.06]"
         style={{
           background: 'radial-gradient(circle, hsl(201,100%,45%) 0%, transparent 70%)',
           filter: 'blur(70px)',
@@ -27,21 +27,21 @@ export function Contact() {
 
       {/* Giant decorative background text */}
       <div
-        className="pointer-events-none select-none absolute -bottom-10 left-0 right-0 text-center leading-none overflow-hidden"
+        className="pointer-events-none select-none absolute -bottom-6 sm:-bottom-10 left-0 right-0 text-center leading-none overflow-hidden"
         aria-hidden
       >
         <span
-          className="text-[18vw] text-white/[0.025]"
+          className="text-[20vw] text-white/[0.025]"
           style={{ fontFamily: "'Instrument Serif', serif" }}
         >
           Velorah
         </span>
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-8">
+      <div className="relative max-w-7xl mx-auto px-5 sm:px-8">
         {/* Label */}
         <p
-          className={`text-xs tracking-[0.2em] uppercase text-muted-foreground mb-6 transition-all duration-700 ${
+          className={`text-xs tracking-[0.2em] uppercase text-muted-foreground mb-4 sm:mb-6 transition-all duration-700 ${
             inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
           }`}
         >
@@ -50,7 +50,7 @@ export function Contact() {
 
         {/* Heading */}
         <h2
-          className={`text-5xl sm:text-6xl md:text-7xl text-foreground max-w-3xl mb-6 transition-all duration-700 delay-100 ${
+          className={`text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-foreground max-w-3xl mb-5 sm:mb-6 transition-all duration-700 delay-100 ${
             inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
           }`}
           style={{
@@ -63,7 +63,7 @@ export function Contact() {
         </h2>
 
         <p
-          className={`text-muted-foreground max-w-md mb-16 leading-relaxed transition-all duration-700 delay-200 ${
+          className={`text-muted-foreground max-w-md mb-10 sm:mb-16 leading-relaxed text-sm sm:text-base transition-all duration-700 delay-200 ${
             inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
           }`}
         >
@@ -72,18 +72,12 @@ export function Contact() {
         </p>
 
         {submitted ? (
-          <div
-            className={`transition-all duration-700 delay-300 ${
-              inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
-            }`}
+          <p
+            className="text-3xl sm:text-4xl text-foreground"
+            style={{ fontFamily: "'Instrument Serif', serif", fontStyle: 'italic' }}
           >
-            <p
-              className="text-4xl text-foreground"
-              style={{ fontFamily: "'Instrument Serif', serif", fontStyle: 'italic' }}
-            >
-              Thank you. We'll be in touch.
-            </p>
-          </div>
+            Thank you. We'll be in touch.
+          </p>
         ) : (
           <form
             onSubmit={handleSubmit}
@@ -92,8 +86,7 @@ export function Contact() {
             }`}
           >
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {/* Name */}
-              <div className="liquid-glass rounded-lg group focus-within:border-white/20">
+              <div className="liquid-glass rounded-lg">
                 <input
                   type="text"
                   placeholder="Your name"
@@ -101,7 +94,6 @@ export function Contact() {
                   className="w-full bg-transparent px-5 py-4 text-foreground placeholder:text-muted-foreground/40 text-sm outline-none"
                 />
               </div>
-              {/* Email */}
               <div className="liquid-glass rounded-lg">
                 <input
                   type="email"
@@ -112,7 +104,6 @@ export function Contact() {
               </div>
             </div>
 
-            {/* Message */}
             <div className="liquid-glass rounded-lg">
               <textarea
                 placeholder="Tell us about your project"
@@ -122,10 +113,10 @@ export function Contact() {
               />
             </div>
 
-            <div className="flex items-center gap-6 pt-2">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 pt-2">
               <button
                 type="submit"
-                className="liquid-glass rounded-full px-12 py-4 text-sm text-foreground hover:scale-[1.03] transition-transform cursor-pointer"
+                className="liquid-glass rounded-full px-10 sm:px-12 py-4 text-sm text-foreground hover:scale-[1.03] transition-transform cursor-pointer w-full sm:w-auto text-center"
               >
                 Send Message
               </button>
